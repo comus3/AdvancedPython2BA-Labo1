@@ -1,14 +1,16 @@
 import pytest
 import utils
+import math
 
 def test_fact():
-    # À compléter...
-    pass
+    assert utils.fact(5) == 120
+    assert utils.fact(6) == 720
+
 
 def test_roots():
-    # À compléter...
-    pass
+    assert all(utils.roots(1,4,4) == [-2,-2])
 
 def test_integrate():
-    # À compléter...
-    pass
+    assert abs(utils.integrate("x*((math.e)**x)",0,1)-(((2*((math.e)**3)+1))/9))<0.001
+    
+

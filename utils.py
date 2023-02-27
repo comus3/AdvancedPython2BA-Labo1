@@ -9,6 +9,8 @@ def fact(n):
 	Post: Returns the factorial of 'n'.
 	Throws: ValueError if n < 0
 	"""
+	if n<0:
+		return 'valueError'
 	res =  1
 	for i in range(n):
 		res = res*(i+1)
@@ -46,3 +48,4 @@ if __name__ == '__main__':
 	print(integrate('x ** 2 - 1', -1, 1))
 	print(((2*((math.e)**3)+1))/9)
 	print(integrate('x*((math.e)**x)',0,1),"	pour le test blalaba")
+	
