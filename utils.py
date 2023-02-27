@@ -1,3 +1,7 @@
+import numpy as np
+from scipy.integrate import quad
+import math
+
 def fact(n):
 	"""Computes the factorial of a natural number.
 	
@@ -5,7 +9,11 @@ def fact(n):
 	Post: Returns the factorial of 'n'.
 	Throws: ValueError if n < 0
 	"""
-	pass
+	res =  1
+	for i in range(n):
+		res = res*(i+1)
+	return res
+	
 
 def roots(a, b, c):
 	"""Computes the roots of the ax^2 + bx + x = 0 polynomial.
@@ -14,7 +22,7 @@ def roots(a, b, c):
 	Post: Returns a tuple with zero, one or two elements corresponding
 		to the roots of the ax^2 + bx + c polynomial.
 	"""
-	pass
+	return np.roots([a,b,c])
 
 def integrate(function, lower, upper):
 	"""Approximates the integral of a fonction between two bounds
@@ -29,9 +37,12 @@ def integrate(function, lower, upper):
 		you'll probably need the 'eval' function to evaluate the function
 		to integrate given as a string.
 	"""
-	pass
+	return quad(lambda x: eval(function), lower, upper)[0]
 
 if __name__ == '__main__':
 	print(fact(5))
 	print(roots(1, 0, 1))
+	print(roots(1, 0, 1) == [1, 1])
 	print(integrate('x ** 2 - 1', -1, 1))
+	print(((2*((math.e)**3)+1))/9)
+	print(integrate('x*((math.e)**x)',0,1),"	pour le test blalaba")
